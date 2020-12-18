@@ -1,20 +1,20 @@
-CREATE TABLE Department(
-    `code` INT PRIMARY KEY NOT NULL,
-    `title` VARCHAR(30),
-    `dept_name` VARCHAR(30) UNIQUE NOT NULL,
-    `dept_id` INT UNIQUE NOT NULL,
-    `salary` INT,
-    CHECK (`salary` > 2000 )
-);
+CREATE TABLE STORE (ORDERNO INT PRIMARY KEY,
+		    CODE VARCHAR (8),
+		    ITEM CHAR (20),
+		    QUANTITY INT, PRICE INT, DISCOUNT VARCHAR (4), MRP INT);
 
-INSERT INTO Department(`code`, `title`, `dept_name`, `dept_id`,`salary`) 
-VALUES (333, "Hello World", "Computer Science", 333, 99000);
+INSERT INTO STORE VALUES (103, 'BL75', 'BOOK', 10, 675, '10%', 750);
+INSERT INTO STORE VALUES (104, 'GP15', 'PEN', 25, 356, '5%' 375);
+INSERT INTO STORE VALUES (105, 'JWSM800', 'BISCUIT', 15, 9000, '25%', 12000);
 
-CREATE TABLE Instructor(
-    `name` VARCHAR(50) NOT NULL,
-    `code` INT NOT NULL,
-    `id` INT PRIMARY KEY DEFAULT 0
-);
+SELECT *FROM STORE;
 
-INSERT INTO Instructor(`name`, `code`, `id`)
-VALUES ("Stephan", 10, 10);
+SELECT
+MOD (PRICE, 9)
+     FROM STORE;
+
+     SELECT POWER (PRICE, 2)
+     FROM STORE;
+
+     SELECT ROUND (PRICE DIV 7)
+     FROM STORE;
